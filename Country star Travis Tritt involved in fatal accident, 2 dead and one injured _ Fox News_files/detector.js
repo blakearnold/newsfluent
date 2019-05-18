@@ -1,0 +1,4 @@
+/*! updated; 04-11-2019 10:01 PM **/
+
+
+Modulr.define("core.base:utils/detector",["require","jquery","core.plugins:OnWindowResize"],function(require,$){var OnResize=require("core.plugins:OnWindowResize"),win=$(window);return new function(){var _cntr=0,_stack={},_current=getType();function getType(){var ret="desktop",width=win.width();return width<768?ret="mobile":width<1025&&(ret="tablet"),ret}this.current=function(){return getType()},this.onChange=function(callback){if("function"!=typeof callback)return!1;var uid="stack-"+ ++_cntr;return _stack[uid]=callback,{stop:function(){if(_stack[uid])try{delete _stack[uid]}catch(err){_stack[uid]=null}}}},OnResize(function(){var type=getType();if(_current!==type)for(var i in _current=type,_stack)"function"==typeof _stack[i]&&_stack[i](_current)},150)}});

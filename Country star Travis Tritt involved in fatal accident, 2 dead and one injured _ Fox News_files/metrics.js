@@ -1,0 +1,5 @@
+
+/** updated: 05-08-2019 09:06 PM **/
+
+
+window.leapmetrics=window.leapmetrics||[],window.leapmetrics.push(function(Leap,require){require(["jquery","core/utils/meta","core/utils/log"],function($,Meta){require("core/utils/log")("metrics:search")("loaded..");var meta=Meta.get();!function(allow){if(meta.page.type==="search"?true:false){var form=$("#content form:first"),searchInput=form.find('input[type="text"]:first');$(".search-filters:first");searchInput.on("focus",function(){Leap.track("search:start")}),form.submit(function(){searchInput.val().length}),$(document).on("click","a[ng-href]",function(evt){evt.preventDefault();var text,el=$(this),href=el.attr("ng-href")||el.attr("href")||"#",title=((text=el.text())||el.closest(".search-info").find("h3").text(),text);if(title)return Leap.track("search:select",{page_search_term:$("body").attr("data-search-term")||searchInput.val(),page_num_search_results:$("body").attr("data-num-results")||1,page_item_title:title}).then(function(){"#"!==href&&window.open(href,"_self")}),!1})}}()})});
