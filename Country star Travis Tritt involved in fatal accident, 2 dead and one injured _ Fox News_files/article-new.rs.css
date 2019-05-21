@@ -8121,7 +8121,7 @@ screen and (min-width:1024px) and (min-resolution:2dppx) {
     }
 
     .article-wrap.has-video .sidebar .sticky-region {
-        padding-bottom: 345px
+        padding-bottom: 5mpx
     }
 
     .article-header:after {
@@ -8238,7 +8238,7 @@ screen and (min-width:1024px) and (min-resolution:2dppx) {
     }
 
     .sidebar-article {
-        margin-top: -90px;
+        margin-top: 0px;
         margin-left: 0;
         margin-right: 16px
     }
