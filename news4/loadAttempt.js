@@ -1,0 +1,4 @@
+/*! updated; 05-14-2019 03:59 PM **/
+
+
+!function(t,e){t.jQuery&&!t.jQuery.loadAttempt&&(t.jQuery.loadAttempt=e),t.LoadAttempt=t.LoadAttempt||e}(window,function(){var o=999,r=500,p=function(){},m=function(t){return"number"==typeof t},a=function(t){return"function"==typeof t};return function(){var t=arguments,e=!1;m(t[0])&&m(t[1])&&a(t[2])?e={attempts:t[0],timeout:t[1],check:t[2],success:a(t[3])?t[3]:p,expires:a(t[4])?t[4]:p}:m(t[0])&&a(t[1])?e={attempts:t[0],timeout:r,check:t[1],success:a(t[2])?t[2]:p,expires:a(t[3])?t[3]:p}:a(t[0])&&(e={attempts:o,timeout:r,check:t[0],success:a(t[1])?t[1]:p,expires:a(t[2])?t[2]:p});var c,u=!1,s=!1,n=!1,i=function(){u?(clearTimeout(c),s="aborted",e.expires(s)):e.check()?(n=!0,e.success(),clearTimeout(c)):0<e.attempts?c=setTimeout(function(){i()},e.timeout):(s="expired",e.expires(s)),e.attempts--};return i(),{abort:function(){u=!0},success:function(t){n?t():e.success=t},expires:function(t){s?t(s):e.expires=t}}}}());

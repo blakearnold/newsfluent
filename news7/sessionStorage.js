@@ -1,0 +1,4 @@
+/*! updated; 04-18-2019 04:12 PM **/
+
+
+Modulr.define("core.base:utils/sessionStorage",["require"],function(require){return new function(){var Proto=this;function storagePrefix(id){return"orion_core_sessstore__"+id}Proto.isAvailable=function(){var res=!0,testId="__coretest_sessionStorage";if("object"==typeof window.sessionStorage)try{window.sessionStorage.setItem(testId,1),window.sessionStorage.removeItem(testId)}catch(err){res=!1}return res},Proto.set=function(id,val){Proto.isAvailable()&&("string"!=typeof val&&(val="object"==typeof val?JSON.stringify(val):void 0!==val?val.toString():null),null!==val&&window.sessionStorage.setItem(storagePrefix(id),val))},Proto.get=function(id){if(!Proto.isAvailable())return null;try{return window.sessionStorage.getItem(storagePrefix(id))}catch(err){return null}},Proto.remove=function(id){if(Proto.isAvailable())try{window.sessionStorage.removeItem(storagePrefix(id))}catch(err){}}}});

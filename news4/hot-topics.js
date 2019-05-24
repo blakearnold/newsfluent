@@ -1,0 +1,4 @@
+/*! updated; 04-18-2019 04:12 PM **/
+
+
+Modulr.define("core.base:modules/hot-topics",["require","jquery"],function(require,$){var target=$(".hot-topics:not(#menu-subnav) ul");return new function(){this.init=function(force){force&&(0<target.children().length||$.getJSON("https://www.foxnews.com/api/hotTopics",function(data){var info=data&&data.response&&data.response.result&&data.response.result.items?data.response.result.items:nulll;if(info){var html=[],counter=1;for(var id in info){var item=info[id];html.push('<li><a href="'+item.url+'" data-omtr-intcmp="subnav'+counter+'">'+item.text+"</a></li>"),counter++}0<html.length&&target.html(html.join(""))}}))}}});

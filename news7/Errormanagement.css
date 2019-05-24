@@ -1,0 +1,91 @@
+.akamai-error.akamai-layer .akamai-error-message.custom-error {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 11px !important;
+  font-weight: lighter;
+  white-space: pre-wrap;
+  margin-top: 13%;
+  height: 75%;
+  position: absolute;
+  width: 96%;
+  color: #949494 !important;
+}
+.akamai-error.akamai-layer.state-live,
+.akamai-error.akamai-layer.state-live.slate-default {
+  background-image: url('slate-off.png');
+  background-size: cover;
+}
+.akamai-error.akamai-layer.state-live.slate-fn {
+  background-image: url('FNC_END_HD.png');
+  background-size: cover;
+}
+.akamai-error.akamai-layer.state-live.slate-fb {
+  background-image: url('FBN_END.png');
+  background-size: cover;
+}
+.akamai-error.akamai-layer.state-live.slate-fblive {
+  background-image: url('FBN_END.png');
+  background-size: cover;
+}
+.akamai-error.akamai-layer.state-live .akamai-error-message.custom-error {
+  display: none;
+}
+.akamai-error-message.custom-error .akamai-error-code {
+  float: right;
+}
+.akamai-error-logo {
+  height: 100px;
+}
+.akamai-error.akamai-layer .akamai-error-message.custom-error img {
+  height: 80%;
+}
+.akamai-touch .akamai-error-logo {
+  display: none;
+}
+.akamai-touch .akamai-error-message.custom-error {
+  white-space: pre-wrap;
+  margin-top: 0%;
+}
+.akamai-touch .akamai-error-message.custom-error p {
+  margin: 0px;
+}
+/*React*/
+.amp-error-msg .akamai-error-message.custom-error {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 11px !important;
+  font-weight: lighter;
+  white-space: pre-wrap;
+  margin-top: 13%;
+  height: 75%;
+  position: absolute;
+  width: 96%;
+  color: #949494 !important;
+}
+.amp-error-msg.state-live,
+.amp-error-msg.state-live.slate-default {
+  background-image: url('slate-off.png');
+  background-size: cover;
+}
+.amp-error-msg.state-live.slate-fn {
+  background-image: url('FNC_END_HD.png');
+  background-size: cover;
+}
+.amp-error-msg.state-live.slate-fb {
+  background-image: url('FBN_END.png');
+  background-size: cover;
+}
+.amp-error-msg.state-live.slate-fblive {
+  background-image: url('FBN_END.png');
+  background-size: cover;
+}
+.amp-error-msg.state-live .akamai-error-message.custom-error {
+  display: none;
+}
+.akamai-error-message.custom-error .akamai-error-code {
+  float: right;
+}
+.akamai-error-logo {
+  height: 100px;
+}
+.amp-error-msg .akamai-error-message.custom-error img {
+  height: 80%;
+}

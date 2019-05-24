@@ -1,0 +1,677 @@
+/*================================================================================
+The use, disclosure, reproduction, modification, transfer, or transmittal
+of this work for any purpose in any form or by any means without th
+written permission of Akamai Technologies is strictly prohibited.
+
+Confidential, Unpublished Property of Akamai Technologies.
+Use and Distribution Limited Solely to Authorized Personnel.
+
+Copyright 2017 Akamai Technologies, Inc.  All Rights Reserved.
+================================================================================*/
+
+
+/* Control bar*/
+.amp-controls{
+  padding: 0em 0em 0em 0em;
+  background: rgb(0, 0, 0); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.70) 4%, rgba(0, 0, 0, 0.70) 59%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.70) 4%,rgba(0, 0, 0, 0.70) 59%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.70) 4%,rgba(0, 0, 0, 0.70) 59%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  box-shadow:0px -20px 20px 15px rgba(0, 0, 0, 0.70);
+  -moz-box-shadow:0px -20px 20px 15px rgba(0, 0, 0, 0.70);
+  -webkit-box-shadow:0px -20px 20px 15px rgba(0, 0, 0, 0.70);
+ }
+
+ .amp-ad-break .amp-controls,
+ .amp-live .amp-controls{
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.70) 4%, rgba(0, 0, 0, 0.70) 59%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.70) 4%,rgba(0, 0, 0, 0.70) 59%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.70) 4%,rgba(0, 0, 0, 0.70) 59%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  box-shadow:1px -3px 15px 9px rgba(0, 0, 0, 0.70);
+  -moz-box-shadow:1px -3px 15px 9px rgba(0, 0, 0, 0.70);
+  -webkit-box-shadow:1px -3px 15px 9px rgba(0, 0, 0, 0.70);
+ }
+
+.amp-live .amp-jump-forward,
+.amp-react .amp-small{
+  display: none;
+}
+.amp-ended .amp-pause-overlay:before,
+.amp-buffering-overlay.amp-icon:before,
+.amp-playpause.amp-icon:before,
+.amp-share.amp-icon:before,
+.amp-jump-forward:before,
+.amp-jump-back:before,
+.amp-fullscreen:before,
+.amp-settings.amp-icon:before,
+.amp-mute.amp-icon:before,
+.amp-mute.amp-icon:after{
+  content: none !important;
+}
+
+.amp-controls .amp-icon.amp-control{
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.amp-settings.amp-icon,
+.amp-cc.amp-icon,
+.amp-share.amp-icon,
+.amp-chromecast.amp-icon,
+.amp-airplay.amp-icon
+{
+  margin: 12px 10px 12px 10px;
+}
+
+.amp-icon{
+  background-size:contain !important;
+}
+.amp-playpause.amp-icon{
+  width: 0.9em;
+  background: url(icons/play.svg) no-repeat;
+  margin: 2px 15px 0px 24px;
+}
+.amp-playing .amp-playpause.amp-icon{
+  background: url(icons/pause.svg) no-repeat;
+}
+.amp-share.amp-icon{
+  margin: 16px 5px 12px 5px !important;
+  width: 4.2em;
+  height: 1.2em;
+  background: url(icons/share.svg) no-repeat;
+}
+.amp-ad-break .amp-share.amp-icon{
+  display: none;
+}
+.amp-cc.amp-icon{
+  font-size: 1.15em;
+  margin-top: 3px;
+}
+.amp-jump-forward.amp-icon,
+.amp-jump-back.amp-icon{
+  width: 1.3em;
+  height: 1.3em;
+  margin:12px 5px 12px 5px;
+}
+.amp-jump-forward.amp-icon{
+	background: url(icons/forward-10.svg) no-repeat
+}
+.amp-jump-back.amp-icon{
+	background: url(icons/back-10.svg) no-repeat
+}
+.amp-full-screen .amp-fullscreen{
+  background: url(icons/screen-default.svg) no-repeat;
+}
+.amp-fullscreen{
+  background: url(icons/screen-full.svg) no-repeat;
+  width: 1.2em;
+  height: 1.3em;
+  margin:12px 24px 12px 10px;
+}
+.amp-settings.amp-icon{
+  width: 1.1em;
+  height: 1.1em;
+  background: url(icons/settings.svg) no-repeat;
+}
+.amp-mute.amp-icon{
+  width: 1.6em;
+  height: 1.2em;
+  margin: 0em 5px 0em 0.5em;
+  background: url(icons/volume-high.svg) no-repeat;
+}
+.amp-mute.amp-icon.amp-low{
+  background: url(icons/volume-low.svg) no-repeat;
+}
+.amp-mute.amp-icon.amp-muted{
+  background: url(icons/volume-mute.svg) no-repeat;
+}
+
+.amp-volume.amp-icon{
+  margin: 0em 0.25em 0em 5px;
+} 
+.amp-volume .amp-handle{
+  top: 0em;
+  width: 0.95em;
+  height: 0.95em;
+  border-radius: 1.375em;
+  background-color: #e9e9e9;
+}
+.amp-volume .amp-value{
+  background-color: #ffffffba;
+  height: 5px;
+}
+.amp-volume .amp-range,
+.amp-volume .amp-track
+{
+  height: 5px;
+}
+.amp-airplay,
+.amp-chromecast {
+  background-repeat: no-repeat;
+  width: 1.58em;
+  height: 1.58em;
+}
+.amp-buffering-overlay.amp-icon{
+  width: 1.26em;
+  height: 1.26em;
+  background: url(icons/spinner.svg) no-repeat;
+  -webkit-animation:none;
+  animation: none;
+  margin: -0.8em 0 0 -0.5em;
+}
+.amp-active .amp-controls{
+  opacity: 1;
+  -webkit-transition: opacity 1s ease-out;
+   -moz-transition: opacity 1s ease-out;
+   -ms-transition: opacity 1s ease-out;
+   -o-transition: opacity 1s ease-out;
+}
+.amp-active .amp-progress{
+ opacity: 1;
+ -webkit-transition: opacity 1s ease-out;
+  -moz-transition: opacity 1s ease-out;
+  -ms-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
+}
+
+.akamai-inactive .amp-progress,
+.amp-inactive .amp-progress,
+.amp-idle .amp-progress{
+   bottom:2.61em;
+ -webkit-transition: opacity 1s ease-in-out;
+   -moz-transition: opacity 1s ease-in-out;
+   -ms-transition: opacity 1s ease-in-out;
+   -o-transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.akamai-inactive .amp-controls,
+.amp-inactive .amp-controls,
+.amp-idle .amp-controls{
+ bottom: 0px;
+ -webkit-transition: opacity 1s ease-in-out;
+   -moz-transition: opacity 1s ease-in-out;
+   -ms-transition: opacity 1s ease-in-out;
+   -o-transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+.akamai-inactive .amp-progress .amp-handle,
+.amp-inactive .amp-progress .amp-handle {
+   top: 0.125em;
+   margin-left: -0.375em;
+   width: 0.75em;
+   height: 0.75em;
+   border-radius: 0.375em;
+ }
+
+.amp-progress{
+    width: 95%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    height: 1.25em;
+    padding-right: 12px;
+}
+.amp-ad-break .amp-progress{
+  display:none;
+}
+
+.amp-progress .amp-handle{
+  width: 19px !important;
+   height: 19px!important;
+   border-radius: 11.375em !important;
+   top: -1px !important;
+   background-color: #e9e9e9;
+}
+.amp-progress .amp-value{
+   background-color: #FFFFFF;
+   height: 0.645em;
+}
+.amp-progress .amp-range{
+  background-color: rgba(255, 255, 255, 0.28);
+  height: 0.645em;
+  max-width: 99%;
+}
+.amp-progress .amp-track{
+  background-color: rgba(255, 255, 255, 0.48);
+  height: 0.645em;
+  max-width: 99%;
+}
+.amp-progress .amp-marker{
+  height: 0.645em;
+}
+
+.amp-time-display
+{
+  font-weight: lighter;
+  font-size: 13px;
+  margin: 0 1px 0 .75em;
+}
+.amp-ad-break .amp-time-display{
+  display:none;
+}
+
+/*Removing time mark when DVR temp*/
+.amp-dvr .amp-time-separator,
+.amp-dvr .amp-duration,
+.amp-dvr .amp-current-time{
+  display: none;
+}
+
+.amp-is-live .amp-live-label,
+.amp-is-live.amp-dvr .amp-live-label,
+.amp-dvr .amp-live-label
+{
+	background: red;
+    display: none;
+    color: #ffffff;
+    cursor: pointer;
+    margin-left: 1em;
+    text-align: center;
+    height: 14px;
+    font-size: 8.5px;
+    width: 25px;
+    border-radius: 2px;
+    display: inline-grid;
+    align-items: center;
+    min-height: 14px;
+}
+.amp-dvr .amp-live-label{
+	width: 41px;
+}
+
+
+/*PLAY-OVERLAY*/
+.amp-pause-overlay{
+  opacity: 1;
+  line-height: 1px;
+  filter: alpha(opacity=1);
+  cursor:pointer;
+  font-size: 5em;
+  background-color: #a2a2a200;
+  color:rgb(255, 255, 255);
+  width: 98px;
+  height: 109px;
+  margin: auto;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.amp-ad-break .amp-controls{
+  z-index: 9999;
+}
+.amp-ad-break .amp-pause-overlay {
+  font-size: 5em;
+  background-color: #555555;
+  color:rgb(255, 255, 255);
+  width: 109px;
+  height: 109px;
+  z-index: 9999 !important;
+}
+.amp-ad-break .amp-pause-overlay:hover {
+  background-color: #555555;
+}
+.amp-ad-break.akamai-vpaid .amp-pause-overlay {
+  opacity: 1;
+  filter: alpha(opacity=1);
+}
+
+.amp-pause-overlay:hover{
+	background-color:#55555500;
+}
+
+.amp-ended .amp-pause-overlay{
+  background: url(icons/replay.svg) no-repeat;
+  opacity: 1;
+  filter: alpha(opacity=1);
+  cursor:pointer;
+  display: block;
+
+}
+/*Title bar*/
+.amp-title{
+  display: none !important;
+}
+/*Auto advance overlay*/
+.akamai-autoadvance.akamai-overlay{
+  bottom: auto;
+  left: auto;
+  right: 0;
+  margin: 0.5em;
+  height: auto;
+}
+.akamai-autoadvance.akamai-overlay .akamai-autoadvance-text{
+  text-shadow: 2px -1px 7px rgba(0, 0, 0, 1);
+}
+
+/* Closed Caption*/
+.akamai-playing .akamai-caption-text,
+.akamai-inactive .akamai-caption-text
+{
+  bottom: 3.36rem !important;
+}
+
+/*AMP Error management*/ 
+.amp-error.amp-ad-break .amp-error-msg{
+  display:none !important;
+}
+
+.amp-error-msg .akamai-error-message.custom-error{
+  margin-top: 9% !important;
+}
+
+.amp-error .amp-pause-overlay,
+.amp-error .akamai-captioning.akamai-overlay,
+.amp-error .amp-small{
+  display: none !important;
+}
+
+/*Free Preview*/
+.akamai-ais-preview{
+ display:none;
+}
+
+.akamai-preview .akamai-ais-preview{
+ display: -webkit-flex;
+ display: flex;
+ -webkit-flex-direction: row;
+}
+
+.akamai-ais-preview{
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 60%, rgba(0,0,0,0) 100%); 
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 60%,rgba(0,0,0,0) 100%); 
+  background: linear-gradient(to bottom, rgba(0,0,0,0.65) 60%,rgba(0,0,0,0) 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+}
+.akamai-ais-preview-label
+{
+  text-shadow: 1px 1px #030303;
+  color:#fffdfd;
+}
+
+/*OLD FP container*/
+.akamai-ais.akamai-overlay.akamai-ais-preview
+{
+  display: none;
+}
+/*.akamai-ais.akamai-overlay.akamai-ais-free-preview{
+ z-index:1;
+}
+.akamai-authenticating .akamai-ais.akamai-overlay.akamai-ais-free-preview{
+ z-index:300;
+}
+.akamai-overlays.akamai-layer{
+ z-index:1;
+}*/
+.akamai-preview .amp-fullscreen,
+.akamai-preview .amp-share,
+.akamai-preview .amp-progress,
+.akamai-preview .amp-jump-back,
+.akamai-preview .amp-jump-forward,
+.akamai-preview .amp-volume.amp-slider,
+.akamai-preview div.amp-settings.amp-panel > div:nth-child(2),
+.akamai-preview .amp-playback-rate-button
+{
+  display: none;
+}
+
+.akamai-preview .amp-time-display{
+ margin-left:1px;
+ margin-right:8px;
+}
+
+/** ****************  HERE CUSTOME CODE ONLY **************** **/ 
+
+/*Fix For VTT cues during pre rolls*/
+.amp-ad-break.akamai-touch video::-webkit-media-text-track-display-backdrop {
+  display: none !important;
+}
+
+.akamai-touch.amp-controls-none.amp-ad-break .amp-pause-overlay.amp-small,
+.amp-controls-none.amp-ad-break .amp-bar.amp-ad-info{
+  display: none !important;
+}
+/* Flash slate */
+.akamai-flash-not-allowed{
+  background-image: url('flashslate.png') !important; 
+  background-size: contain;
+}
+.akamai-flash-not-allowed .akamai-video.akamai-layer,
+.akamai-flash-not-allowed .amp-react.amp-ui,
+.akamai-flash-not-allowed .akamai-overlays.akamai-layer
+{
+    display: none !important;
+}
+.akamai-flash-not-allowed a.fox-support{
+  position: absolute;
+  pointer-events: all;
+  width:100%;
+  height: 100%;
+}
+
+/* Firefox CC are sitting at the bottom*/
+video::cue{
+  top:50% !important;
+}
+
+/**************************Mobile WEB view*******************************/ 
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 767px), (min-width: 320px) and (max-width: 420px) {
+
+.amp-ended .amp-pause-overlay:before,
+.amp-playing .amp-pause-overlay:before{
+    content: none !important;
+}
+
+/*Control bar*/
+
+.amp-controls{
+  padding: 0em 0.2em 0em 0.2em;
+}
+.amp-react .amp-pause-overlay,
+.amp-controls .amp-jump-forward.amp-icon,
+.amp-controls .amp-jump-back.amp-icon{
+  display: none;
+  pointer-events:none;
+}
+
+.amp-react .amp-small{
+  display: block;
+}
+
+.amp-jump-forward.amp-icon{
+  background: url(icons/forward-10.svg) no-repeat;
+  position:absolute;
+  width: 2.5em;
+  height: 2.5em;
+  top: 0 !important;
+  bottom: 3% !important;
+  right: 15% !important;
+  margin: auto !important;
+  pointer-events: auto;
+  cursor:pointer;
+}
+.amp-jump-back.amp-icon{
+  background: url(icons/back-10.svg) no-repeat;
+  position:absolute;
+  width: 2.5em;
+  height: 2.5em;
+  top: 0 !important;
+  bottom: 3% !important;
+  left: 15% !important;
+  margin: auto !important;
+  pointer-events: auto;
+  cursor:pointer;
+}
+
+
+.amp-ad-break .amp-jump-back.amp-icon,
+.amp-ad-break .amp-jump-forward.amp-icon,
+.amp-controls-none .amp-jump-back.amp-icon,
+.amp-controls-none .amp-jump-forward.amp-icon,
+.amp-controls-none .amp-pause-overlay
+{
+  display: none !important;
+}
+
+/*Progress BAR*/
+.amp-progress .amp-handle{
+  top: 0.03em !important;
+  width: 0.95em !important;
+  height: 0.95em !important;
+  border-radius: 1.375em !important;
+  background-color: #cb1414;
+}
+
+.amp-volume.amp-slider{
+  display: none;
+}
+
+/*PLAY-OVERLAY*/
+.amp-pause-overlay{
+  font-size:4em;
+  line-height: 1px;
+  display: block;
+  opacity: 1;
+  filter: alpha(opacity=1);
+  cursor:pointer;
+  pointer-events: auto;
+  margin: -1em -0.7em -1em;
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  background-color:#ff000000 
+}
+.amp-ad-break .amp-pause-overlay {
+  font-size: 4em;
+  background-color: #00000000;
+  color:rgb(255, 255, 255)
+}
+.amp-ad-break .amp-pause-overlay:hover {
+  background-color: #55555500;
+}
+
+.amp-active.amp-ready .amp-pause-overlay.amp-small,
+.amp-active.amp-playing .amp-pause-overlay.amp-small,
+.amp-active.amp-paused .amp-pause-overlay.amp-small,
+.amp-active.amp-ended .amp-pause-overlay.amp-small{
+	  pointer-events: auto;
+}
+
+.amp-playing .amp-pause-overlay.amp-small
+{
+  background: url(icons/play-overlay-pause.svg) no-repeat;
+  display: block;
+  font-size:4em;
+  line-height: 1px;
+}
+
+.amp-inactive .amp-small,
+.akamai-inactive .amp-small,
+.amp-inactive .amp-pause-overlay.amp-small{
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+   opacity: 0;
+   pointer-events:none;
+}
+
+.amp-idle .amp-small,
+.amp-idle .amp-pause-overlay
+{
+	pointer-events: none !important;
+	display:none !important;
+}
+.amp-ad-break.amp-idle.amp-paused .amp-pause-overlay,
+.amp-ad-break.amp-inactive.amp-paused .amp-pause-overlay{
+  display: block !important;
+  z-index: 999 !important;
+}
+
+/*TODO: remove after foxnews team passes autoplay:false in order to show editor image within their playoverlay*/
+.amp-ready .amp-small,
+.amp-paused .amp-small{
+ opacity:1 !important;
+ display:block !important;
+}
+
+/*Settings Panels*/
+.amp-open .amp-panel{
+  z-index: 2;
+}
+
+
+}
+
+/** Tablet **/
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px){
+    .amp-pause-overlay{
+      font-size:4em;
+    }
+
+    .amp-progress .amp-handle{
+      width: 24px !important;
+      height: 24px !important;
+      top: 1px !important;
+    }
+  }
+
+  /** Small player view**/
+  @media (min-width: 120px) and (max-width: 319px){
+    .amp-time-display,
+    .amp-jump-forward,
+    .amp-jump-back,
+    .amp-volume.amp-slider
+    {
+      display:none !important;
+    }
+
+    .akamai-volume-open .amp-bar{
+      width: 150%;
+    }
+    .akamai-volume-open .amp-volume.amp-slider{
+      display:block !important;
+    }
+  }
+
+  /** Firefox live captions issue **/
+  #player.akamai-firefox.akamai-full-screen video::cue {
+    font-size: larger !important;
+  }
+
+  @media only screen and (max-width: 1400px) {
+    #player.akamai-firefox video::cue{
+      font-size: large !important;
+    }
+
+  }
+  @media only screen and (max-width: 800px) {
+    #player.akamai-firefox video::cue {
+      font-size: small !important;
+    }
+  }
+
+/** IE/EDGE Loader **/ 
+/* IE10+ CSS */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .amp-buffering-overlay.amp-icon{
+    background: url(icons/loader.gif) no-repeat;
+    margin: 0 0 0 -0.5em;
+  }
+ }
+/* IE Edge 12+ CSS */ 
+/* IE Edge 16+ CSS */ 
+@supports (-ms-ime-align:auto) or (-ms-accelerator:true) {
+  .amp-buffering-overlay.amp-icon{
+    background: url(icons/loader.gif) no-repeat;
+    margin: 0 0 0 -0.5em;
+  }
+}
+
